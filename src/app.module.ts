@@ -14,6 +14,7 @@ import { RealtimeModule } from './realtime/realtime.module';
 import { UserNotificationsModule } from './user-notifications/user-notifications.module';
 import { SurveysModule } from './surveys/surveys.module';
 import { MobileSurveysModule } from './mobile-surveys/mobile-surveys.module';
+import { DeleteAccountModule } from './delete-account/delete-account.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { MobileSurveysModule } from './mobile-surveys/mobile-surveys.module';
     UserNotificationsModule,
     SurveysModule,
     MobileSurveysModule,
+    DeleteAccountModule,
   ],
   controllers: [AppController, AdminUserController],
   providers: [AppService],
