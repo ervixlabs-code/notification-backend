@@ -472,3 +472,23 @@ model SurveyAnswer {
   @@unique([responseId, questionId])
   @@index([questionId, optionId])
 }
+
+enum DeleteAccountReason {
+  NOT_USEFUL
+  TOO_MANY_NOTIFICATIONS
+  PRIVACY_CONCERNS
+  TECHNICAL_ISSUES
+  FOUND_ALTERNATIVE
+  OTHER
+}
+
+model AccountDeletionLog {
+  id        Int                 @id @default(autoincrement())
+  userId     Int
+  email      String?
+  reason     DeleteAccountReason
+  note       String?
+  createdAt  DateTime           @default(now())
+
+  @@index([userId])
+}
